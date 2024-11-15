@@ -17,78 +17,100 @@
             align-items: center;
             padding: 20px;
             background-color: #f0f0f0;
-            min-height: 100vh;
         }
         .container {
             display: flex;
-            width: 70%;
+            width: 100%;
             max-width: 1200px;
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .left, .right {
-            padding: 20px;
+            border-radius: 10px;
+            overflow: hidden;
         }
         .left {
-            width: 40%;
+            width: 35%;
             background-color: #333;
             color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
         .profile-picture {
-            width: 100%;
-            max-width: 1080px;
-            height: 1080px;
-            margin: 0 auto 20px;
+            width: 200px;
+            height: 200px;
             background-image: url('anhdaidien.jpg');
             background-size: cover;
             background-position: center;
             border-radius: 50%;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .right {
-            width: 60%;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        h2 {
-            font-size: 1.5em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        p, ul, li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        .about, .contact, .skills, .reference {
             margin-bottom: 20px;
         }
-        .skills ul {
-            list-style: none;
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
+        .left p, .left ul {
+            font-size: 0.9em;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .left ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
         }
         .skills li {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
+            flex-direction: column;
+            margin-bottom: 15px;
         }
-        .experience, .education {
-            margin-bottom: 20px;
+        .skills li span {
+            margin-bottom: 5px;
         }
         .line {
             background-color: #555;
-            height: 5px;
+            height: 8px;
             width: 100%;
             border-radius: 5px;
-            margin-bottom: 10px;
+            overflow: hidden;
         }
         .bar {
             background-color: #eee;
+            height: 8px;
             border-radius: 5px;
-            width: 70%;
-            height: 5px;
         }
+        .photoshop { width: 80%; }
+        .javascript { width: 70%; }
+        .html { width: 90%; }
+        .css { width: 85%; }
+
+        .right {
+            width: 65%;
+            padding: 20px;
+        }
+        .right h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .right h2 {
+            font-size: 1em;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .right p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive design */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -96,16 +118,15 @@
             }
             .left, .right {
                 width: 100%;
-            }
-            h1 {
-                font-size: 1.6em;
-            }
-            h2 {
-                font-size: 1.2em;
+                text-align: left;
+                padding: 15px;
             }
             .profile-picture {
-                height: 500px;
-                width: 500px;
+                width: 150px;
+                height: 150px;
+            }
+            .section-title, .right h1, .right h2 {
+                text-align: center;
             }
         }
         @media (max-width: 480px) {
@@ -116,18 +137,18 @@
                 width: 100%;
                 box-shadow: none;
             }
-            h1 {
-                font-size: 1.4em;
-            }
-            h2 {
-                font-size: 1em;
-            }
             .profile-picture {
-                height: 300px;
-                width: 300px;
+                width: 120px;
+                height: 120px;
             }
-            .left, .right {
-                padding: 15px;
+            .line, .bar {
+                height: 6px;
+            }
+            .right h1 {
+                font-size: 1.5em;
+            }
+            .right h2, .section-title {
+                font-size: 1.2em;
             }
         }
     </style>
@@ -136,51 +157,55 @@
     <div class="container">
         <div class="left">
             <div class="profile-picture"></div>
-            <div class="about">
-                <h1>About Me</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est itaque dicta dolor quam aliquam optio illo, quib.</p>
-            </div>
-            <div class="contact">
-                <h2>Contact Us</h2>
-                <p>Address: Lorem ipsum dolor sit amet.</p>
-                <p>Phone: 0123456789</p>
-                <p>Email: demo@gmail.com</p>
-            </div>
-            <div class="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>Photoshop <div class="line"><div class="bar" style="width: 80%;"></div></div></li>
-                    <li>JavaScript <div class="line"><div class="bar" style="width: 70%;"></div></div></li>
-                    <li>HTML <div class="line"><div class="bar" style="width: 90%;"></div></div></li>
-                    <li>CSS <div class="line"><div class="bar" style="width: 85%;"></div></div></li>
-                </ul>
-            </div>
-            <div class="reference">
-                <h2>Reference Person</h2>
-                <p>Mr. Hien Luong - Company</p>
-                <p>Name: ______________</p>
-                <p>Position: _____________</p>
-                <p>Contact: _____________</p>
-                <p>Mr. Khiet Luong - Company</p>
-                <p>Name: ______________</p>
-                <p>Position: _____________</p>
-                <p>Contact: _____________</p>
-            </div>
+            <div class="section-title">ABOUT ME</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est itaque dicta dolor quam aliquam optio illo, quib.</p>
+            <div class="section-title">CONTACT</div>
+            <p>Address: Lorem ipsum dolor sit amet.</p>
+            <p>Phone: 0123456789</p>
+            <p>Email: demo@gmail.com</p>
+            <div class="section-title">SKILLS</div>
+            <ul class="skills">
+                <li>
+                    <span>Photoshop</span>
+                    <div class="line">
+                        <div class="bar photoshop"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>JavaScript</span>
+                    <div class="line">
+                        <div class="bar javascript"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>HTML</span>
+                    <div class="line">
+                        <div class="bar html"></div>
+                    </div>
+                </li>
+                <li>
+                    <span>CSS</span>
+                    <div class="line">
+                        <div class="bar css"></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="section-title">REFERENCE</div>
+            <p>Mr. Hien Luong - Company</p>
+            <p>Mr. Khiet Luong - Company</p>
         </div>
         <div class="right">
             <h1>NGUYEN VAN A</h1>
             <h2>Title: Developer</h2>
-            <div class="education">
-                <h2>Education</h2>
+            <div class="section">
+                <h2>EDUCATION</h2>
                 <p>2014-2016 Lorem ipsum dolor sit amet consectetur.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <p>2014-2016 Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
             </div>
-            <div class="experience">
-                <h2>Experience</h2>
+            <div class="section">
+                <h2>EXPERIENCE</h2>
                 <p>2014-2016 Lorem ipsum dolor sit amet consectetur.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                <p>2013-2014 Lorem ipsum dolor sit amet consectetur.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <p>2013-2014 Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
             </div>
         </div>
     </div>
